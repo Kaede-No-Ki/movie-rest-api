@@ -2,10 +2,9 @@ require("dotenv").config();
 const express = require("express");
 const bodyParser = require("body-parser");
 const cors = require("cors");
-const axios = require("axios");
 const { homeRouter } = require("./app/routes/HomeRoutes");
-const { default: Axios } = require("axios");
 const { detailRouter } = require("./app/routes/DetailRoutes");
+const { episodeRouter } = require("./app/routes/EpisodeRouter");
 
 const app = express();
 
@@ -17,6 +16,7 @@ app.use(cors());
 
 app.use(homeRouter);
 app.use(detailRouter);
+app.use(episodeRouter);
 
 const PORT = process.env.PORT || 8090;
 

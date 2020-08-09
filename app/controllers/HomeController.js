@@ -1,6 +1,6 @@
 const cheerio = require("cheerio");
 const { default: Axios } = require("axios");
-const { baseUrl, urlApi } = require("../helpers/Constant");
+const { baseUrl, urlApi, seriesUrl } = require("../helpers/Constant");
 const { extractId } = require("../helpers/Extractor");
 
 const home = async (req, res, next) => {
@@ -15,7 +15,7 @@ const home = async (req, res, next) => {
   mostViewedResponse.each((i, elem) => {
     let item = {};
     const id = extractId($(elem).find("a").eq(0).attr("href"));
-    const url = `${urlApi}/detail/series/${id}`;
+    const url = `${urlApi}detail/${seriesUrl}${id}`;
     const title = $(elem).find("span.mli-info").eq(0).text();
     const thumbnail = $(elem).find("img.mli-thumb").eq(0).attr("data-original");
     item = { id, title, url, thumbnail };
