@@ -5,6 +5,6 @@ var homeRouter = require("express").Router();
 
 router.get("/", HomeController.home);
 
-homeRouter.use("/home", router);
+homeRouter.use("/", router);
 
 module.exports = { homeRouter };

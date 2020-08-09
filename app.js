@@ -5,6 +5,7 @@ const cors = require("cors");
 const { homeRouter } = require("./app/routes/HomeRoutes");
 const { detailRouter } = require("./app/routes/DetailRoutes");
 const { episodeRouter } = require("./app/routes/EpisodeRouter");
+const { listDrakorRouter } = require("./app/routes/ListDrakorRouter");
 
 const app = express();
 
@@ -17,6 +18,7 @@ app.use(cors());
 app.use(homeRouter);
 app.use(detailRouter);
 app.use(episodeRouter);
+app.use(listDrakorRouter);
 
 const PORT = process.env.PORT || 8090;
 

@@ -1,6 +1,11 @@
 const cheerio = require("cheerio");
 const { default: Axios } = require("axios");
-const { baseUrl, urlApi, seriesUrl } = require("../helpers/Constant");
+const {
+  baseUrl,
+  urlApi,
+  seriesUrl,
+  episodeUrl,
+} = require("../helpers/Constant");
 const { extractId } = require("../helpers/Extractor");
 
 const home = async (req, res, next) => {
@@ -13,47 +18,34 @@ const home = async (req, res, next) => {
     .find(".ml-item");
   let mostViewed = [];
   mostViewedResponse.each((i, elem) => {
-    let item = {};
     const id = extractId($(elem).find("a").eq(0).attr("href"));
-    const url = `${urlApi}detail/${seriesUrl}${id}`;
-    const title = $(elem).find("span.mli-info").eq(0).text();
-    const thumbnail = $(elem).find("img.mli-thumb").eq(0).attr("data-original");
-    item = { id, title, url, thumbnail };
-    mostViewed.push(item);
+    mostViewed.push({
+      id,
+      url: `${urlApi}detail/${seriesUrl}${id}`,
+      title: $(elem).find("span.mli-info").eq(0).text(),
+      quality: $(elem).find("span.mli-quality").eq(0).text(),
+      thumbnail: $(elem).find("img.mli-thumb").eq(0).attr("data-original"),
+    });
   });
 
   const newEpisodeResponse = $(".movies-list-wrap").eq(1).find(".ml-item");
   let newEpisode = [];
   newEpisodeResponse.each((i, elem) => {
-    let item = {};
     const id = extractId($(elem).find("a").eq(0).attr("href"));
-    const url = `${urlApi}/ep/${id}`;
-    const title = $(elem).find("span.mli-info").eq(0).text();
-    const thumbnail = $(elem).find("img.mli-thumb").eq(0).attr("data-original");
-    const episode = $(elem)
-      .find("div.jt-info.jt-imdb")
-      .eq(0)
-      .text()
-      .replace("Episode:", "")
-      .trim();
-    item = { id, title, url, thumbnail, episode };
-    newEpisode.push(item);
+
+    newEpisode.push({
+      id,
+      url: `${urlApi}${episodeUrl}${id}`,
+      title: $(elem).find("span.mli-info").eq(0).text(),
+      quality: $(elem).find("span.mli-quality").eq(0).text(),
+      thumbnail: $(elem).find("img.mli-thumb").eq(0).attr("data-original"),
+    });
   });
-  const newDramaResponse = $(".movies-list-wrap").eq(2).find(".ml-item");
-  let newDrama = [];
-  newDramaResponse.each((i, elem) => {
-    let item = {};
-    const id = extractId($(elem).find("a").eq(0).attr("href"));
-    const url = `${urlApi}/detail/${id}`;
-    const title = $(elem).find("span.mli-info").eq(0).text();
-    const thumbnail = $(elem).find("img.mli-thumb").eq(0).attr("data-original");
-    item = { id, title, url, thumbnail };
-    newDrama.push(item);
-  });
+
   res.send({
     status: true,
     message: "succes",
-    data: { mostViewed, newEpisode, newDrama },
+    data: { mostViewed, newEpisode },
   });
 };
 
