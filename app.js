@@ -5,6 +5,7 @@ const cors = require("cors");
 const axios = require("axios");
 const { homeRouter } = require("./app/routes/HomeRoutes");
 const { default: Axios } = require("axios");
+const { detailRouter } = require("./app/routes/DetailRoutes");
 
 const app = express();
 
@@ -15,6 +16,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(cors());
 
 app.use(homeRouter);
+app.use(detailRouter);
 
 const PORT = process.env.PORT || 8090;
 
