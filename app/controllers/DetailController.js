@@ -21,6 +21,11 @@ const series = async (req, res, next) => {
     const descriptions = {};
 
     const title = descResponse.find("h3").eq(0).text();
+    const thumbnail = $("img.hidden").eq(0).attr("src");
+    const banner = $("#content-cover")
+      .attr("style")
+      .split("(")[1]
+      .replace(");", "");
 
     descLeft.each((i, elem) => {
       const desc = $(elem).text().trim();
@@ -44,16 +49,8 @@ const series = async (req, res, next) => {
       }
     });
 
-    // const description = $(".desc").eq(0).text();
-
     const episodes = [];
-    // season : 1,
-    // data : [
-    //   {
-    //     episode : asdasd,
-    //     url : asasd
-    //   },
-    // ]
+
     $("#seasons")
       .children()
       .each((i, elem) => {
@@ -61,9 +58,7 @@ const series = async (req, res, next) => {
         season.season = i + 1;
         season.data = [];
         const item = $(elem);
-        const title = item.find("div.les-title").eq(0).text();
         const episodeContent = item.find("div.les-content").eq(0);
-        console.log(episodeContent.text());
         if (episodeContent.text().trim() != "No Episodes Available") {
           episodeContent.children().each((i, elem) => {
             season.data.push({
@@ -85,6 +80,8 @@ const series = async (req, res, next) => {
       data: {
         id,
         title,
+        thumbnail,
+        banner,
         descriptions,
         episodes,
       },

@@ -26,31 +26,17 @@ const search = async (req, res, next) => {
           console.log(url);
           if (url.search("/episode/") == -1) {
             const id = extractId($(elem).find("a").eq(0).attr("href"));
-            if (isSeries(url)) {
-              list.push({
-                id,
-                type: "series",
-                url: `${urlApi}${seriesUrl}${id}`,
-                title: $(elem).find("span.mli-info").eq(0).text(),
-                quality: $(elem).find("span.mli-quality").eq(0).text(),
-                thumbnail: $(elem)
-                  .find("img.mli-thumb")
-                  .eq(0)
-                  .attr("data-original"),
-              });
-            } else {
-              list.push({
-                id,
-                type: "movies",
-                url: `${urlApi}${seriesUrl}${id}`,
-                title: $(elem).find("span.mli-info").eq(0).text(),
-                quality: $(elem).find("span.mli-quality").eq(0).text(),
-                thumbnail: $(elem)
-                  .find("img.mli-thumb")
-                  .eq(0)
-                  .attr("data-original"),
-              });
-            }
+            list.push({
+              id,
+              type: isSeries(url) ? "series" : "movies",
+              url: `${urlApi}${isSeries(url) ? seriesUrl : "movies/"}${id}`,
+              title: $(elem).find("span.mli-info").eq(0).text(),
+              quality: $(elem).find("span.mli-quality").eq(0).text(),
+              thumbnail: $(elem)
+                .find("img.mli-thumb")
+                .eq(0)
+                .attr("data-original"),
+            });
           }
         }
       });
