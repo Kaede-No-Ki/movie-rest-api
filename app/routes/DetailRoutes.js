@@ -6,7 +6,7 @@ const detailRouter = require("express").Router();
 
 router.get("/series/:id", DetailController.series);
 router.get("/series/episode/:id", EpisodeController.episode);
-router.get("/movies/:id", DetailController.series);
+router.get("/movies/:id", DetailController.movies);
 
 //router.get("/movies", HomeController.home);
 
