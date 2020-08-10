@@ -22,9 +22,11 @@
 - [ ] List Korean Movie
 - [ ] Detail Korean Movie
 - [ ] Search
-- [ ] Genre
-- [ ] OnGoing
-- [ ] Complete
+- [x] Genre
+    - [x] Genre List
+    - [ ] Drakor by Genre
+- [ ] OnGoing Pagination
+- [ ] Complete Pagination
 
 ## Usage
 
@@ -64,6 +66,7 @@ npm run dev
 | /list/:page        | page : Int  | List Drakor    |
 | /detail/series/:id | id : String | Detail Drakor  |
 | /episode/:id       | id : String | Detail Episode |
+| /genres       | - | Genre List |
 
 ## Contributing
 
