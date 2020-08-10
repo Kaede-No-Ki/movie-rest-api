@@ -43,14 +43,36 @@ const series = async (req, res, next) => {
     // const description = $(".desc").eq(0).text();
 
     const episodes = [];
-    $(".les-content")
-      .eq(0)
+    // season : 1,
+    // data : [
+    //   {
+    //     episode : asdasd,
+    //     url : asasd
+    //   },
+    // ]
+    $("#seasons")
       .children()
       .each((i, elem) => {
-        episodes.push({
-          episode: $(elem).text().replace("Episode", "").trim(),
-          url: urlApi + episodeUrl + extractId($(elem).attr("href") + "/"),
-        });
+        const season = {};
+        season.season = i + 1;
+        season.data = [];
+        const item = $(elem);
+        const title = item.find("div.les-title").eq(0).text();
+        const episodeContent = item.find("div.les-content").eq(0);
+        console.log(episodeContent.text());
+        if (episodeContent.text().trim() != "No Episodes Available") {
+          episodeContent.children().each((i, elem) => {
+            season.data.push({
+              episode: $(elem).text().replace("Episode", "").trim(),
+              url:
+                urlApi +
+                seriesUrl +
+                episodeUrl +
+                extractId($(elem).attr("href") + "/"),
+            });
+          });
+        }
+        episodes.push(season);
       });
 
     res.send({

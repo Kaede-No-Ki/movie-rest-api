@@ -21,7 +21,7 @@ const home = async (req, res, next) => {
     const id = extractId($(elem).find("a").eq(0).attr("href"));
     mostViewed.push({
       id,
-      url: `${urlApi}detail/${seriesUrl}${id}`,
+      url: `${urlApi}${seriesUrl}${id}`,
       title: $(elem).find("span.mli-info").eq(0).text(),
       quality: $(elem).find("span.mli-quality").eq(0).text(),
       thumbnail: $(elem).find("img.mli-thumb").eq(0).attr("data-original"),
@@ -35,7 +35,7 @@ const home = async (req, res, next) => {
 
     newEpisode.push({
       id,
-      url: `${urlApi}${episodeUrl}${id}`,
+      url: `${urlApi}${seriesUrl}${episodeUrl}${id}`,
       title: $(elem).find("span.mli-info").eq(0).text(),
       quality: $(elem).find("span.mli-quality").eq(0).text(),
       thumbnail: $(elem).find("img.mli-thumb").eq(0).attr("data-original"),
