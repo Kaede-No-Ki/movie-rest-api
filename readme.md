@@ -14,8 +14,8 @@
 ## TODO
 
 - [x] Home
-    - [x] Most Viewed
-    - [x] New Episode
+  - [x] Most Viewed
+  - [x] New Episode
 - [x] List Drakor
 - [x] Detail Drakor
 - [x] Episode Drakor
@@ -23,8 +23,8 @@
 - [ ] Detail Korean Movie
 - [ ] Search
 - [x] Genre
-    - [x] Genre List
-    - [ ] Drakor by Genre
+  - [x] Genre List
+  - [ ] Drakor by Genre
 - [ ] OnGoing Pagination
 - [ ] Complete Pagination
 
@@ -60,13 +60,19 @@ npm run dev
 
 **API Version** : v1
 
-| Endpoint           | Params      | Description    |
-| ------------------ | ----------- | -------------- |
-| /                  | -           | Homepage       |
-| /list/:page        | page : Int  | List Drakor    |
-| /detail/series/:id | id : String | Detail Drakor  |
-| /episode/:id       | id : String | Detail Episode |
-| /genres       | - | Genre List |
+| Endpoint              | Params                  | Description       |
+| --------------------- | ----------------------- | ----------------- |
+| /                     | -                       | Homepage          |
+| /list/korean/:page    | page : Int              | List Korean Drama |
+| /list/west/:page      | page : Int              | List Serial Barat |
+| /list/asia/:page      | page : Int              | List Drama Asia   |
+| /list/movies/:page    | page : Int              | List Movie        |
+| /series/:id           | id : String             | Detail Series     |
+| /series/episode/:id   | id : String             | Detail Episode    |
+| /movies/:id           | id : String             | Detail Movie      |
+| /genres               | -                       | Genre List        |
+| /genre/:id/page/:page | id : String, page : Int | Show by Genre     |
+| /search/:query        | query : String          | Show by Genre     |
 
 ## Contributing
 
@@ -75,4 +81,5 @@ Pull requests are welcome. For major changes, please open an issue first to disc
 Please make sure to update tests as appropriate.
 
 ## License
+
 [MIT](https://github.com/Kaede-No-Ki/drakor-rest-api/blob/master/LICENSE)
