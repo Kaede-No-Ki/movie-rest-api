@@ -6,6 +6,7 @@ const { homeRouter } = require("./app/routes/HomeRoutes");
 const { detailRouter } = require("./app/routes/DetailRoutes");
 const { episodeRouter } = require("./app/routes/EpisodeRouter");
 const { listDrakorRouter } = require("./app/routes/ListDrakorRouter");
+const genreRouter = require("./app/routes/GenreRoutes");
 
 const app = express();
 
@@ -19,6 +20,7 @@ app.use(homeRouter);
 app.use(detailRouter);
 app.use(episodeRouter);
 app.use(listDrakorRouter);
+app.use(genreRouter);
 
 const PORT = process.env.PORT || 8090;
 

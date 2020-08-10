@@ -14,6 +14,8 @@
 ## TODO
 
 - [x] Home
+    - [x] Most Viewed
+    - [x] New Episode
 - [x] List Drakor
 - [x] Detail Drakor
 - [x] Episode Drakor
