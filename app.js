@@ -4,9 +4,10 @@ const bodyParser = require("body-parser");
 const cors = require("cors");
 const { homeRouter } = require("./app/routes/HomeRoutes");
 const { detailRouter } = require("./app/routes/DetailRoutes");
-const { episodeRouter } = require("./app/routes/EpisodeRouter");
-const { listRouter } = require("./app/routes/ListRouter");
-const genreRouter = require("./app/routes/GenreRoutes");
+const { episodeRouter } = require("./app/routes/EpisodeRoutes");
+const { listRouter } = require("./app/routes/ListRoutes");
+const { genreRouter } = require("./app/routes/GenreRoutes");
+const { searchRouter } = require("./app/routes/SearchRoutes");
 
 const app = express();
 
@@ -21,6 +22,7 @@ app.use(detailRouter);
 app.use(episodeRouter);
 app.use(listRouter);
 app.use(genreRouter);
+app.use(searchRouter);
 
 const PORT = process.env.PORT || 8090;
 

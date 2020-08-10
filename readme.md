@@ -62,19 +62,19 @@ npm run dev
 
 **API Version** : v1
 
-| Endpoint              | Params                  | Description       |
-| --------------------- | ----------------------- | ----------------- |
-| /                     | -                       | Homepage          |
-| /list/korean/:page    | page : Int              | List Korean Drama |
-| /list/west/:page      | page : Int              | List Serial Barat |
-| /list/asia/:page      | page : Int              | List Drama Asia   |
-| /list/movies/:page    | page : Int              | List Movie        |
-| /series/:id           | id : String             | Detail Series     |
-| /series/episode/:id   | id : String             | Detail Episode    |
-| /movies/:id           | id : String             | Detail Movie      |
-| /genres               | -                       | Genre List        |
-| /genre/:id/page/:page | id : String, page : Int | Show by Genre     |
-| /search/:query        | query : String          | Show by Genre     |
+| Endpoint             | Params                     | Description       |
+| -------------------- | -------------------------- | ----------------- |
+| /                    | -                          | Homepage          |
+| /list/korean/:page   | page : Int                 | List Korean Drama |
+| /list/west/:page     | page : Int                 | List Serial Barat |
+| /list/asia/:page     | page : Int                 | List Drama Asia   |
+| /list/movies/:page   | page : Int                 | List Movie        |
+| /series/:id          | id : String                | Detail Series     |
+| /series/episode/:id  | id : String                | Detail Episode    |
+| /movies/:id          | id : String                | Detail Movie      |
+| /genres              | -                          | Genre List        |
+| /genre/:id/:page     | id : String, page : Int    | Show by Genre     |
+| /search/:query/:page | query : String, page : Int | Show by Genre     |
 
 ## Contributing
 

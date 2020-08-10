@@ -1,10 +1,10 @@
-const express = require('express');
+const express = require("express");
 const router = express.Router();
-const GenreController = require('.././controllers/GenreController')
+const GenreController = require(".././controllers/GenreController");
 const genreRouter = express.Router();
 
-router.get('/genres',GenreController.genreList)
+router.get("/genres", GenreController.genreList);
 
-genreRouter.use('/',router)
+genreRouter.use("/", router);
 
-module.exports = genreRouter
+module.exports = { genreRouter };
