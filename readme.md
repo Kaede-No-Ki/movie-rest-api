@@ -16,8 +16,10 @@
 - [x] Home
   - [x] Most Viewed
   - [x] New Episode
-- [x] List Drakor
-- [x] Detail Drakor
+- [x] List Korean Series
+- [x] List West Series
+- [x] List Asian Series
+- [x] Detail Series
 - [x] Episode Drakor
 - [ ] List Korean Movie
 - [ ] Detail Korean Movie

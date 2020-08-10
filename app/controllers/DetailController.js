@@ -36,7 +36,11 @@ const series = async (req, res, next) => {
       if (desc.length > 0) {
         descriptions[
           desc.split(":")[0].toLocaleLowerCase().replace(" ", "")
-        ] = desc.split(":")[1].replace("Country", "").trim();
+        ] = desc
+          .split(":")[1]
+          .replace("Country", "")
+          .replace("Networks", "")
+          .trim();
       }
     });
 
