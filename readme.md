@@ -24,9 +24,7 @@
 - [x] Search
 - [x] Genre
   - [x] Genre List
-  - [ ] Drakor by Genre
-- [ ] OnGoing Pagination
-- [ ] Complete Pagination
+  - [ ] Movies or Series by Genre
 
 ## Usage
 

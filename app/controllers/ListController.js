@@ -14,7 +14,7 @@ const { addHttp } = require("../helpers/HttpAddons");
 
 const korean = async (req, res, next) => {
   let { id } = req.params;
-  id = id ? id : 1;
+  id = id ? (id == 0 ? 1 : id) : 1;
   const url = baseUrl + drakorUrl + "page/" + id;
   console.log(url);
 
@@ -59,7 +59,7 @@ const korean = async (req, res, next) => {
 
 const west = async (req, res, next) => {
   let { id } = req.params;
-  id = id ? id : 1;
+  id = id ? (id == 0 ? 1 : id) : 1;
   const url = baseUrl + westUrl + "page/" + id;
   console.log(url);
 
@@ -104,7 +104,7 @@ const west = async (req, res, next) => {
 
 const asia = async (req, res, next) => {
   let { id } = req.params;
-  id = id ? id : 1;
+  id = id ? (id == 0 ? 1 : id) : 1;
   const url = baseUrl + asianUrl + "page/" + id;
   console.log(url);
 
@@ -149,7 +149,7 @@ const asia = async (req, res, next) => {
 
 const movies = async (req, res, next) => {
   let { id } = req.params;
-  id = id ? id : 1;
+  id = id ? (id == 0 ? 1 : id) : 1;
   const url = baseUrl + moviesUrl + "page/" + id;
   console.log(url);
 

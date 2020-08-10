@@ -12,7 +12,7 @@ const search = async (req, res, next) => {
   try {
     const query = req.params.query.replace(" ", "+");
     let page = req.params.page;
-    page = page ? page : 1;
+    page = page ? (page == 0 ? 1 : page) : 1;
     console.log(query);
     const response = await Axios.get(`${baseUrl}page/${page}/?s=${query}`);
     const $ = cheerio.load(response.data);
