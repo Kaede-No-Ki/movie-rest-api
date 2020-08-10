@@ -17,10 +17,10 @@
 - [x] List Korean Series
 - [x] List Western Series
 - [x] List Asian Series
-- [ ] List Movies
+- [x] List Movies
 - [x] Detail Series
 - [x] Detail Episode Series
-- [ ] Detail Movies
+- [x] Detail Movies
 - [x] Search
 - [x] Genre
   - [x] Genre List

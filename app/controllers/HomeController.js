@@ -7,7 +7,7 @@ const {
   episodeUrl,
 } = require("../helpers/Constant");
 const { extractId, isSeries } = require("../helpers/Extractor");
-const { getBannerUrl } = require("../helpers/BannerImage");
+const { convertToBanner } = require("../helpers/BannerImage");
 
 const home = async (req, res, next) => {
   const response = await Axios.get(baseUrl);
@@ -33,7 +33,7 @@ const home = async (req, res, next) => {
         title: $(elem).find("span.mli-info").eq(0).text(),
         quality: $(elem).find("span.mli-quality").eq(0).text(),
         thumbnail: $(elem).find("img.mli-thumb").eq(0).attr("data-original"),
-        banner: getBannerUrl(
+        banner: convertToBanner(
           $(elem).find("img.mli-thumb").eq(0).attr("data-original")
         ),
       });
@@ -52,7 +52,7 @@ const home = async (req, res, next) => {
         title: $(elem).find("span.mli-info").eq(0).text(),
         quality: $(elem).find("span.mli-quality").eq(0).text(),
         thumbnail: $(elem).find("img.mli-thumb").eq(0).attr("data-original"),
-        banner: getBannerUrl(
+        banner: convertToBanner(
           $(elem).find("img.mli-thumb").eq(0).attr("data-original")
         ),
       });
@@ -71,7 +71,7 @@ const home = async (req, res, next) => {
         title: $(elem).find("span.mli-info").eq(0).text(),
         quality: $(elem).find("span.mli-quality").eq(0).text(),
         thumbnail: $(elem).find("img.mli-thumb").eq(0).attr("data-original"),
-        banner: getBannerUrl(
+        banner: convertToBanner(
           $(elem).find("img.mli-thumb").eq(0).attr("data-original")
         ),
       });
@@ -90,7 +90,7 @@ const home = async (req, res, next) => {
         title: $(elem).find("span.mli-info").eq(0).text(),
         quality: $(elem).find("span.mli-quality").eq(0).text(),
         thumbnail: $(elem).find("img.mli-thumb").eq(0).attr("data-original"),
-        banner: getBannerUrl(
+        banner: convertToBanner(
           $(elem).find("img.mli-thumb").eq(0).attr("data-original")
         ),
       });

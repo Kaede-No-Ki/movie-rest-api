@@ -9,6 +9,8 @@ const {
 const { extractId } = require("../helpers/Extractor");
 const { addHttp } = require("../helpers/HttpAddons");
 
+const { getBanner } = require("../helpers/BannerImage");
+
 const series = async (req, res, next) => {
   try {
     const id = req.params.id;
@@ -106,11 +108,7 @@ const movies = async (req, res, next) => {
 
     const title = descResponse.find("h3").eq(0).text();
     const thumbnail = $("img.hidden").eq(0).attr("src");
-    const banner = $(".mvi-cover")
-      .first()
-      .attr("style")
-      .split("(")[1]
-      .replace(");", "");
+    const banner = getBanner($(".mvi-cover").first().attr("style"));
 
     descLeft.each((i, elem) => {
       const desc = $(elem).text().trim();

@@ -12,6 +12,9 @@ router.get("/west", ListController.west);
 router.get("/asia/:id", ListController.asia);
 router.get("/asia", ListController.asia);
 
+router.get("/movies/:id", ListController.movies);
+router.get("/movies", ListController.movies);
+
 //router.get("/movies", HomeController.home);
 
 listRouter.use("/list", router);
