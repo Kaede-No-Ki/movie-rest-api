@@ -14,15 +14,13 @@
 ## TODO
 
 - [x] Home
-  - [x] Most Viewed
-  - [x] New Episode
 - [x] List Korean Series
-- [x] List West Series
+- [x] List Western Series
 - [x] List Asian Series
 - [ ] List Movies
 - [x] Detail Series
+- [x] Detail Episode Series
 - [ ] Detail Movies
-- [x] Episode Drakor
 - [x] Search
 - [x] Genre
   - [x] Genre List
@@ -62,19 +60,19 @@ npm run dev
 
 **API Version** : v1
 
-| Endpoint             | Params                     | Description       |
-| -------------------- | -------------------------- | ----------------- |
-| /                    | -                          | Homepage          |
-| /list/korean/:page   | page : Int                 | List Korean Drama |
-| /list/west/:page     | page : Int                 | List Serial Barat |
-| /list/asia/:page     | page : Int                 | List Drama Asia   |
-| /list/movies/:page   | page : Int                 | List Movie        |
-| /series/:id          | id : String                | Detail Series     |
-| /series/episode/:id  | id : String                | Detail Episode    |
-| /movies/:id          | id : String                | Detail Movie      |
-| /genres              | -                          | Genre List        |
-| /genre/:id/:page     | id : String, page : Int    | Show by Genre     |
-| /search/:query/:page | query : String, page : Int | Show by Genre     |
+| Endpoint             | Params                     | Description                    |
+| -------------------- | -------------------------- | ------------------------------ |
+| /                    | -                          | Homepage                       |
+| /list/korean/:page   | page : Int                 | List Korean Series             |
+| /list/west/:page     | page : Int                 | List Western Series            |
+| /list/asia/:page     | page : Int                 | List Asian Series              |
+| /list/movies/:page   | page : Int                 | List Movies                    |
+| /series/:id          | id : String                | Detail Series                  |
+| /series/episode/:id  | id : String                | Detail Episode Series          |
+| /movies/:id          | id : String                | Detail Movies                  |
+| /genres              | -                          | Genre List                     |
+| /genre/:id/:page     | id : String, page : Int    | Show movies or series by Genre |
+| /search/:query/:page | query : String, page : Int | Search movies or series        |
 
 ## Contributing
 
