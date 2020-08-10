@@ -19,11 +19,11 @@
 - [x] List Korean Series
 - [x] List West Series
 - [x] List Asian Series
+- [ ] List Movies
 - [x] Detail Series
+- [ ] Detail Movies
 - [x] Episode Drakor
-- [ ] List Korean Movie
-- [ ] Detail Korean Movie
-- [ ] Search
+- [x] Search
 - [x] Genre
   - [x] Genre List
   - [ ] Drakor by Genre
