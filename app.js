@@ -24,6 +24,10 @@ app.use(listRouter);
 app.use(genreRouter);
 app.use(searchRouter);
 
+app.use("*", (req, res) => {
+  res.send({ status: false, message: "URL not found" });
+});
+
 const PORT = process.env.PORT || 8090;
 
 app.listen(PORT, () => {

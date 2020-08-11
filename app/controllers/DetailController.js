@@ -90,7 +90,7 @@ const series = async (req, res, next) => {
       },
     });
   } catch (err) {
-    res.send(err);
+    res.send({ status: false, message: err.stack });
   }
 };
 

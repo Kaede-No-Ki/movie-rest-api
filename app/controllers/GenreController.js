@@ -5,8 +5,9 @@ const { convertToBanner } = require("../helpers/BannerImage");
 const { default: Axios } = require("axios");
 
 class GenreController {
-  genreList = (req, res) => {
-    Axios.get(baseUrl).then((response) => {
+  genreList = async (req, res) => {
+    try {
+      const response = await Axios.get(baseUrl);
       const $ = cheerio.load(response.data);
       const elements = $(".sub-container");
       let obj = {};
@@ -24,7 +25,9 @@ class GenreController {
         };
       });
       res.send(obj);
-    });
+    } catch (err) {
+      res.send({ status: false, message: err.stack });
+    }
   };
   genre = async (req, res) => {
     try {

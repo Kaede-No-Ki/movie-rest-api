@@ -56,7 +56,7 @@ const search = async (req, res, next) => {
       data: { nextUrl, list },
     });
   } catch (err) {
-    res.send({ err });
+    res.send({ status: false, message: err.stack });
   }
 };
 
