@@ -24,7 +24,7 @@
 - [x] Search
 - [x] Genre
   - [x] Genre List
-  - [ ] Movies or Series by Genre
+  - [x] Movies or Series by Genre
 
 ## Usage
 
