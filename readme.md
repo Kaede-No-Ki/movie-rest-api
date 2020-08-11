@@ -1,4 +1,4 @@
-# Drakor API
+# Movie-Corner
 
 <p align="center">
 <img alt="GitHub issues" src="https://img.shields.io/github/issues/Kaede-No-Ki/drakor-rest-api">
