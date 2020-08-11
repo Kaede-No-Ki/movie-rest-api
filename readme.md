@@ -11,6 +11,10 @@
 <img alt="GitHub last commit" src="https://img.shields.io/github/last-commit/Kaede-No-Ki/drakor-rest-api">
 </p>
 
+## PRODUCTION SERVER
+
+[Click Here](https://calm-plateau-31453.herokuapp.com/)
+
 ## TODO
 
 - [x] Home
