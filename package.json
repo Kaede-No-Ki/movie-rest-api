@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "MODE=PRODUCTION node index.js",
+    "start": "node index.js MODE=PRODUCTION",
     "dev": "MODE=DEVELOPMENT nodemon index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
