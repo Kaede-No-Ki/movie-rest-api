@@ -2,10 +2,10 @@
   "name": "y",
   "version": "1.0.0",
   "description": "",
-  "main": "app.js",
+  "main": "index.js",
   "scripts": {
-    "start": "MODE=PRODUCTION node app.js",
-    "dev": "MODE=DEVELOPMENT nodemon app.js",
+    "start": "MODE=PRODUCTION node index.js",
+    "dev": "MODE=DEVELOPMENT nodemon index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [
