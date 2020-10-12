@@ -8,6 +8,7 @@ const {
 } = require("../helpers/Constant");
 
 const { addHttp } = require("../helpers/HttpAddons");
+const GetUrl = require("../helpers/GetUrl");
 
 const episode = async (req, res, next) => {
   try {
@@ -15,7 +16,15 @@ const episode = async (req, res, next) => {
     const response = await Axios.get(baseUrl + episodeUrl + id);
     const $ = cheerio.load(response.data);
 
-    const urlStreaming = [];
+    let urlStr = $("#player2").children().eq(1).find("iframe").attr("src");
+    let urlStreaming = [];
+
+    // urlStreaming = {
+    //   url: await GetUrl.streaming(addHttp(urlStr)),
+    //   name: `Server 2`,
+    // };
+
+    console.log(urlStr);
     $("#player2")
       .children()
       .each((i, elem) => {

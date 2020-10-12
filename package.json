@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "node index.js MODE=PRODUCTION",
-    "dev": "MODE=DEVELOPMENT nodemon index.js",
+    "dev": "set MODE=DEVELOPMENT && nodemon index.js ",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [
@@ -18,9 +18,11 @@
     "axios": "^0.19.2",
     "body-parser": "^1.19.0",
     "cheerio": "^1.0.0-rc.3",
+    "chromedriver": "^86.0.0",
     "cors": "^2.8.5",
     "dotenv": "^8.2.0",
     "express": "^4.17.1",
-    "nodemon": "^2.0.4"
+    "nodemon": "^2.0.4",
+    "selenium-webdriver": "^4.0.0-alpha.7"
   }
 }

@@ -7,7 +7,7 @@ module.exports = {
   asianUrl: "drama-asia/",
   moviesUrl: "movies/",
   urlApi:
-    process.env.MODE == "DEVELOPMENT"
+    process.env.MODE.trim() == "DEVELOPMENT"
       ? `${process.env.URL_API_DEV}:${process.env.PORT}/`
       : process.env.URL_API_PROD,
 };

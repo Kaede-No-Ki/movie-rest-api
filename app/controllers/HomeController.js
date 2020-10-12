@@ -11,6 +11,7 @@ const { convertToBanner } = require("../helpers/BannerImage");
 
 const home = async (req, res, next) => {
   try {
+    console.log(urlApi);
     const response = await Axios.get(baseUrl);
     const $ = cheerio.load(response.data);
 
