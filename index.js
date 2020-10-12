@@ -24,6 +24,10 @@ app.use(listRouter);
 app.use(genreRouter);
 app.use(searchRouter);
 
+app.use("/ping", (req, res) => {
+  res.send({ status: true, message: "Hello im alive :D" });
+});
+
 app.use("*", (req, res) => {
   res.send({ status: false, message: "URL not found" });
 });
