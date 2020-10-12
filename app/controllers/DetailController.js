@@ -65,6 +65,7 @@ const series = async (req, res, next) => {
         if (episodeContent.text().trim() != "No Episodes Available") {
           episodeContent.children().each((i, elem) => {
             season.data.push({
+              id: extractId($(elem).attr("href") + "/"),
               episode: $(elem).text().replace("Episode", "").trim(),
               url:
                 urlApi +
